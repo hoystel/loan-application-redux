@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './clientfilter.css';
 
-class Clientfilter extends Component {
+export class Clientfilter extends Component {
      render() {
           return(
                <React.Fragment>

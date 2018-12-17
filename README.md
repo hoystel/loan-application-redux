@@ -1,4 +1,4 @@
-sack off firebase
+sack off firebase - done
 
 create global store
 
