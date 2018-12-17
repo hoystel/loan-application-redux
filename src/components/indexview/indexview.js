@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './indexview.css';
 
-import axios from 'axios';
+import { connect } from 'react-redux';
 
 import SearchBox from './../searchbox/searchbox';
 import ClientFilter from './../clientfilter/clientfilter';
@@ -9,54 +9,6 @@ import Spinner from './../spinner/spinner';
 
 class IndexView extends Component {
     state = {
-        applications: [{
-            appId: 192,
-            client: 'Nationwide',
-            status: 'Approved',
-            amount: 500
-        },
-        {
-            appId: 193,
-            client: 'Citi Bank PLC',
-            status: 'Pending',
-            amount: 18000
-        },
-        {
-            appId: 194,
-            client: 'Natwest PLC',
-            status: 'Approved',
-            amount: 27500
-        },
-        {
-            appId: 195,
-            client: 'Deutsche Bank',
-            status: 'Pending',
-            amount: 27500
-        },
-        {
-            appId: 196,
-            client: 'Halifax',
-            status: 'Approved',
-            amount: 3670
-        },
-        {
-            appId: 197,
-            client: 'Deutsche Bank',
-            status: 'Pending',
-            amount: 13000
-        },
-        {
-            appId: 198,
-            client: 'JP Morgan',
-            status: 'Approved',
-            amount: 5631
-        },
-        {
-            appId: 199,
-            client: 'RBS',
-            status: 'Denied',
-            amount: 187000
-        }],
         filteredList: null,
         filterApplied: false
     }
@@ -64,7 +16,7 @@ class IndexView extends Component {
     // TODO merge these functions so filters work in tandem - MIGHT NEED TO JUST BE ONE FORM
     filterByClientHandler = (event) => {
         if(event.target.value !== "All") {
-            let filtered = this.state.applications
+            let filtered = this.props.storeApplications
             let filteredResults = filtered.filter(item => item.client === event.target.value);
             this.setState({ filteredList: filteredResults, filterApplied: true });
         }
@@ -75,7 +27,7 @@ class IndexView extends Component {
 
     filterByStatusHandler = (event) => {
         if(event.target.value !== "All") {
-            let filtered = this.state.applications
+            let filtered = this.props.storeApplications
             let filteredResults = filtered.filter(item => item.status === event.target.value);
             this.setState({ filteredList: filteredResults, filterApplied: true });
         }
@@ -87,9 +39,11 @@ class IndexView extends Component {
     render() {
         let loansToShow = <Spinner />;
         let filteredLoansToShow;
+
+        console.log(this.props.storeApplications);
         
-        if(this.state.applications !== null && this.state.filteredList == null) {
-            loansToShow = this.state.applications.map(item => {
+        if(this.props.storeApplications !== null && this.state.filteredList == null) {
+            loansToShow = this.props.storeApplications.map(item => {
                 return (
                     <div className="loan-row" key={item.appId}>
                         <div className="column">{item.appId}</div>
@@ -121,10 +75,10 @@ class IndexView extends Component {
                     <ClientFilter filterApplied={this.state.filterApplied} filterByClient={this.filterByClientHandler} filterByStatus={this.filterByStatusHandler}/>
                 </div>
 
-                {this.state.applications == null ? loansToShow : null }
+                {this.props.storeApplications == null ? loansToShow : null }
 
                 <div className="loans-container">
-                    {this.state.applications !== null ?
+                    {this.props.storeApplications !== null ?
                         <div className="loan-row header">
                             <div className="column">Application ID</div>
                             <div className="column">Client</div>
@@ -133,8 +87,8 @@ class IndexView extends Component {
                         </div> : null 
                     }
 
-                    {this.state.filterApplied == false 
-                        && this.state.applications !== null
+                    {this.state.filterApplied === false 
+                        && this.props.storeApplications !== null
                         ? loansToShow : null}
                     
                     {filteredLoansToShow}
@@ -145,4 +99,8 @@ class IndexView extends Component {
     
 }
 
-export default IndexView;
+const mapStateToProps = (state) => ({
+    storeApplications: state.store.applications
+});
+
+export default connect(mapStateToProps)(IndexView);
