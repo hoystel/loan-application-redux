@@ -1,0 +1,22 @@
+.App {
+  //outline: 2px solid red;
+  margin: 0;
+  padding: 0;
+  //background-color: #ccc;
+}
+
+.main-container {
+  width: 960px;
+  margin: 0 auto;
+  //outline:1px solid green;
+}
+
+.top-cont {
+  width:100%;
+
+  div:first-child {
+    float:left;
+    display:inline-block;
+    width:60%;
+  }
+}

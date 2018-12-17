@@ -1,0 +1,22 @@
+.loans-container {
+    margin-top:40px;
+    box-shadow: 0 2px 3px #ccc;
+
+    .loan-row {
+        padding: 10px;
+
+        &.header {
+            background-color: rgb(58, 70, 238)!important;
+            color: white;
+        }
+
+        div {
+            display: inline-block;
+            width: 25%;
+        }
+    }
+
+    .loan-row:nth-child(odd) {
+        background-color: #eee;
+    }
+}
