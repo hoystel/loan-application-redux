@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
-import axios from 'axios';
-//import { browserHistory } from 'react-router';
+import { connect } from 'react-redux';
+import { Link } from 'react-router-dom';
+
+import { addNewApplication } from './../../actions/index';
 
 class NewLoanApplication extends Component {
      state = {
@@ -12,6 +14,7 @@ class NewLoanApplication extends Component {
           }
      }
 
+     // this functionality can stay tbh 
      handleFormChange = (event) => {
           let name = event.target.name;
           let value = event.target.value;
@@ -24,36 +27,36 @@ class NewLoanApplication extends Component {
 
      handleSubmit = (event) => {
           event.preventDefault();
-          //fire off the state to firebase and redirect to index page
-          axios.post('', this.state.application)
-               .then(response => {
-                    console.log(response)
-               })
-               .catch(error => {
-                    console.log(error)
-               })
-               //browserHistory.push("/");
+          //call a dispatcher and update global store and redirect to index page
+          this.props.addNewLoanApp(
+               this.state.application.appId, 
+               this.state.application.client, 
+               this.state.application.amount, 
+               this.state.application.status);
      }
 
      render() {
           return(
-               <form onSubmit={this.handleSubmit}>
-                    <p>Application ID:</p>
-                    <input type="text" name="appId" placeholder="Application ID" onChange={this.handleFormChange}/>
-                    <br/>
-                    <p>Client:</p>
-                    <input type="text" name="client" placeholder="client" onChange={this.handleFormChange}/>
-                    <p>Amount (GBP):</p>
-                    <input type="text" name="amount" placeholder="amount" onChange={this.handleFormChange}/>
-                    <br/><br/>
-                    <input type="submit" value="Submit"/>
-                    {this.state.application.appId}
-                    {this.state.application.client}
-                    {this.state.application.amount}
-                    {this.state.application.status}
-               </form>
+               <React.Fragment>
+                    <form onSubmit={this.handleSubmit}>
+                         <p>Application ID:</p>
+                         <input type="text" name="appId" placeholder="Application ID" onChange={this.handleFormChange}/>
+                         <br/>
+                         <p>Client:</p>
+                         <input type="text" name="client" placeholder="client" onChange={this.handleFormChange}/>
+                         <p>Amount (GBP):</p>
+                         <input type="text" name="amount" placeholder="amount" onChange={this.handleFormChange}/>
+                         <br/><br/>
+                         <input type="submit" value="Submit"/>
+                    </form>
+                    <Link to="/">New Loan Application</Link>
+               </React.Fragment>
           )
      }
 }
 
-export default NewLoanApplication;
+const mapDispatchToProps = (dispatch) => ({
+     addNewLoanApp: (appId, client, amount, status) => dispatch(addNewApplication(appId, client, amount, status))
+});
+
+export default connect(null, mapDispatchToProps)(NewLoanApplication);

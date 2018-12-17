@@ -1,7 +1,7 @@
 // REDUCER IS WHERE WE CHANGE THE STATE
 import { combineReducers } from 'redux';
 
-import ADD_NEW_APPLICATION from './../actions/index';
+import { ADD_NEW_APPLICATION } from './../actions/index';
 
 let initialState = {
     version: 1.0,
@@ -59,7 +59,8 @@ function rootReducer(state = initialState, action) {
     switch(action.type) {
         case ADD_NEW_APPLICATION:
             return {
-                ...state
+                ...state,
+                applications: state.applications.concat(action.payload)
             }
         default:
             return state;

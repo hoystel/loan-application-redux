@@ -4,7 +4,10 @@ export function addNewApplication(appId, client, amount, status) {
     return {
         type: ADD_NEW_APPLICATION,
         payload: { 
-            appId: appId
+            appId: appId,
+            client: client,
+            amount: amount,
+            status: status
         }
     }
 };
