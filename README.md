@@ -1,7 +1,11 @@
 sack off firebase - done
 
-create global store
+create global store - done
 
-set the loan applications into store
+set the new loan applications into store - done
 
-create my reducers etc to update store
+
+
+add delete action and reducer case
+
+add edit status action and reducer case

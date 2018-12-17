@@ -7,6 +7,8 @@ import SearchBox from './../searchbox/searchbox';
 import ClientFilter from './../clientfilter/clientfilter';
 import Spinner from './../spinner/spinner';
 
+import { deleteApplication } from './../../actions/index';
+
 class IndexView extends Component {
     state = {
         filteredList: null,
@@ -36,6 +38,10 @@ class IndexView extends Component {
         }
     }
 
+    deleteApplication = (appId) => {
+        this.props.removeApplication(appId);
+    }
+
     render() {
         let loansToShow = <Spinner />;
         let filteredLoansToShow;
@@ -50,6 +56,8 @@ class IndexView extends Component {
                         <div className="column">{item.client}</div>
                         <div className="column">£{item.amount}</div>
                         <div className="column">{item.status}</div>
+                        <div className="column"><span onClick={() => this.deleteApplication(item.appId)}>Delete</span></div>
+                        <div className="column">Edit</div>
                     </div>
                 );
             })
@@ -63,6 +71,8 @@ class IndexView extends Component {
                         <div className="column">{item.client}</div>
                         <div className="column">£{item.amount}</div>
                         <div className="column">{item.status}</div>
+                        <div className="column">Delete</div>
+                        <div className="column">Edit</div>
                     </div>
                 );
             }) 
@@ -103,4 +113,8 @@ const mapStateToProps = (state) => ({
     storeApplications: state.store.applications
 });
 
-export default connect(mapStateToProps)(IndexView);
+const mapDispatchToProps = (dispatch) => ({
+    removeApplication: (appId) => dispatch(deleteApplication(appId))
+});
+
+export default connect(mapStateToProps,mapDispatchToProps)(IndexView);

@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { Link } from 'react-router-dom';
 
 import { addNewApplication } from './../../actions/index';
 
@@ -33,6 +32,7 @@ class NewLoanApplication extends Component {
                this.state.application.client, 
                this.state.application.amount, 
                this.state.application.status);
+               this.props.history.push('/');
      }
 
      render() {
@@ -49,7 +49,6 @@ class NewLoanApplication extends Component {
                          <br/><br/>
                          <input type="submit" value="Submit"/>
                     </form>
-                    <Link to="/">New Loan Application</Link>
                </React.Fragment>
           )
      }
