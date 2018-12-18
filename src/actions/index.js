@@ -25,3 +25,11 @@ export function deleteApplication(appId) {
         payload: appId
     }
 }
+
+export function approveApplication(appId, status) {
+    return {
+        type: APPROVE_APPLICATION,
+        payload: appId,
+        newStatus: status
+    }
+}

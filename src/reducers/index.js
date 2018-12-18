@@ -1,7 +1,11 @@
 // REDUCER IS WHERE WE CHANGE THE STATE
 import { combineReducers } from 'redux';
 
-import { ADD_NEW_APPLICATION, DELETE_APPLICATION } from './../actions/index';
+import { 
+    ADD_NEW_APPLICATION, 
+    DELETE_APPLICATION,
+    APPROVE_APPLICATION
+ } from './../actions/index';
 
 let initialState = {
     version: 1.0,
@@ -66,6 +70,11 @@ function rootReducer(state = initialState, action) {
             return {
                 ...state,
                 applications: state.applications.filter((item) => item.appId !== action.payload)
+            }
+        case APPROVE_APPLICATION:
+            return {
+                ...state,
+                applications: state.applications.appId[action.payload].status === action.status
             }
         default:
             return state;
