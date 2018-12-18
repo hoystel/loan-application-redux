@@ -6,13 +6,16 @@ import { connect } from 'react-redux';
 import SearchBox from './../searchbox/searchbox';
 import ClientFilter from './../clientfilter/clientfilter';
 import Spinner from './../spinner/spinner';
+import Modal from '../modal/modal';
 
+//import actions - the func
 import { deleteApplication } from './../../actions/index';
 
 class IndexView extends Component {
     state = {
         filteredList: null,
-        filterApplied: false
+        filterApplied: false,
+        showModal: false
     }
 
     // TODO merge these functions so filters work in tandem - MIGHT NEED TO JUST BE ONE FORM
@@ -42,6 +45,11 @@ class IndexView extends Component {
         this.props.removeApplication(appId);
     }
 
+    openEditMode = (appId) => {
+        //alert(appId);
+        this.setState({ showModal: true });
+    }
+
     render() {
         let loansToShow = <Spinner />;
         let filteredLoansToShow;
@@ -57,7 +65,7 @@ class IndexView extends Component {
                         <div className="column">£{item.amount}</div>
                         <div className="column">{item.status}</div>
                         <div className="column"><span onClick={() => this.deleteApplication(item.appId)}>Delete</span></div>
-                        <div className="column">Edit</div>
+                        <div className="column"><span onClick={() => this.openEditMode(item.appId)}>Edit</span></div>
                     </div>
                 );
             })
@@ -86,6 +94,8 @@ class IndexView extends Component {
                 </div>
 
                 {this.props.storeApplications == null ? loansToShow : null }
+
+                {this.state.showModal ? <Modal /> : null }
 
                 <div className="loans-container">
                     {this.props.storeApplications !== null ?
