@@ -63,7 +63,7 @@ class IndexView extends Component {
         let loansToShow = <Spinner />;
         let filteredLoansToShow;
 
-        console.log(this.props.storeApplications);
+        //console.log(this.props.storeApplications);
         
         if(this.props.storeApplications !== null && this.state.filteredList == null) {
             loansToShow = this.props.storeApplications.map(item => {
@@ -141,7 +141,7 @@ const mapStateToProps = (state) => ({
 
 const mapDispatchToProps = (dispatch) => ({
     removeApplication: (appId) => dispatch(deleteApplication(appId)),
-    approveApplication: (appId) => dispatch(approveApplication(appId))
+    approveApplication: (appId, status) => dispatch(approveApplication(appId, status))
 });
 
 export default connect(mapStateToProps,mapDispatchToProps)(IndexView);

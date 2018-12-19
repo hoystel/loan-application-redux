@@ -72,9 +72,21 @@ function rootReducer(state = initialState, action) {
                 applications: state.applications.filter((item) => item.appId !== action.payload)
             }
         case APPROVE_APPLICATION:
+            // find the item in question
+            let loanInQuestion = state.applications.filter((item) => item.appId === action.payload)
+            //console.log(loanInQuestion);
+            //console.log(loanInQuestion[0].status);
+            
+            // amend the property i want
+            loanInQuestion[0].status = action.newStatus;
+            console.log(loanInQuestion);
+            console.log(loanInQuestion[0].status);
+
+            // remove item in q from main array
+            // concat const onto the main array
             return {
                 ...state,
-                applications: state.applications.appId[action.payload].status === action.status
+                applications: state.applications.filter((item) => item.appId !== action.payload).concat(loanInQuestion[0])
             }
         default:
             return state;
