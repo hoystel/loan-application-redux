@@ -66,7 +66,11 @@ class IndexView extends Component {
         //console.log(this.props.storeApplications);
         
         if(this.props.storeApplications !== null && this.state.filteredList == null) {
-            loansToShow = this.props.storeApplications.map(item => {
+            loansToShow = this.props.storeApplications.sort(
+                function (a, b) {
+                return a.appId - b.appId;
+              })
+              .map(item => {
                 return (
                     <div className="loan-row" key={item.appId}>
                         <div className="column">{item.appId}</div>
