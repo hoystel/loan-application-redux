@@ -4,6 +4,7 @@ export const DELETE_APPLICATION = 'DELETE_APPLICATION';
 
 export const APPROVE_APPLICATION = 'APPROVE_APPLICATION';
 export const DENY_APPLICATION = 'DENY_APPLICATION';
+export const PENDING_APPLICATION = 'PENDING_APPLICATION';
 
 export function addNewApplication(appId, client, amount, status) {
     return {
@@ -29,6 +30,22 @@ export function deleteApplication(appId) {
 export function approveApplication(appId, status) {
     return {
         type: APPROVE_APPLICATION,
+        payload: appId,
+        newStatus: status
+    }
+}
+
+export function denyApplication(appId, status) {
+    return {
+        type: DENY_APPLICATION,
+        payload: appId,
+        newStatus: status
+    }
+}
+
+export function pendingApplication(appId, status) {
+    return {
+        type: PENDING_APPLICATION,
         payload: appId,
         newStatus: status
     }

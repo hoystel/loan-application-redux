@@ -8,8 +8,12 @@ import ClientFilter from './../clientfilter/clientfilter';
 import Spinner from './../spinner/spinner';
 
 //import actions - the func
-import { deleteApplication } from './../../actions/index';
-import { approveApplication } from '../../actions/index';
+import { 
+    deleteApplication,
+    approveApplication,
+    denyApplication,
+    pendingApplication
+ } from './../../actions/index';
 
 class IndexView extends Component {
     state = {
@@ -45,18 +49,22 @@ class IndexView extends Component {
     }
 
     amendApplicationStatus = (event, appId) => {
-        //get event
         const eventDesc = event.target.value;
         
-        //if approve fire approve action 
         if(eventDesc === 'Approved') {
             const status = 'Approved';
             this.props.approveApplication(appId, status);
         }
 
-        //if deny fire deny
+        if(eventDesc === 'Denied') {
+            const status = 'Denied';
+            this.props.denyApplication(appId, status);
+        }
 
-        //if pending fire pending
+        if(eventDesc === 'Pending') {
+            const status = 'Pending';
+            this.props.denyApplication(appId, status);
+        }
     }
 
     render() {
@@ -145,7 +153,9 @@ const mapStateToProps = (state) => ({
 
 const mapDispatchToProps = (dispatch) => ({
     removeApplication: (appId) => dispatch(deleteApplication(appId)),
-    approveApplication: (appId, status) => dispatch(approveApplication(appId, status))
+    approveApplication: (appId, status) => dispatch(approveApplication(appId, status)),
+    denyApplication: (appId, status) => dispatch(denyApplication(appId, status)),
+    pendingApplication: (appId, status) => dispatch(pendingApplication(appId, status))
 });
 
 export default connect(mapStateToProps,mapDispatchToProps)(IndexView);
