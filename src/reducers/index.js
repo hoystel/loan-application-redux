@@ -77,9 +77,7 @@ function rootReducer(state = initialState, action) {
             
             // amend the property i want
             loanInQuestion[0].status = action.newStatus;
-            console.log(loanInQuestion[0].status);
-            // remove item in q from main array
-            // concat const onto the main array
+            // remove item in q then concat new item in
             return {
                 ...state,
                 applications: state.applications.filter((item) => item.appId !== action.payload).concat(loanInQuestion[0])
