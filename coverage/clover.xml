@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<coverage generated="1546010380068" clover="3.2.0">
+  <project timestamp="1546010380068" name="All files">
+    <metrics statements="109" coveredstatements="10" conditionals="35" coveredconditionals="0" methods="41" coveredmethods="1" elements="185" coveredelements="11" complexity="0" loc="109" ncloc="109" packages="9" files="10" classes="10">
+      <package name="src">
+        <metrics statements="10" coveredstatements="0" conditionals="2" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <file name="data.js" path="/Users/lukehoysted/Sites/LoanApplicationRedux/src/data.js">
+          <metrics statements="1" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+          <line num="1" count="0" type="stmt"/>
+        </file>
+        <file name="index.js" path="/Users/lukehoysted/Sites/LoanApplicationRedux/src/index.js">
+          <metrics statements="9" coveredstatements="0" conditionals="2" coveredconditionals="0" methods="0" coveredmethods="0"/>
+          <line num="1" count="0" type="stmt"/>
+          <line num="2" count="0" type="stmt"/>
+          <line num="3" count="0" type="stmt"/>
+          <line num="4" count="0" type="stmt"/>
+          <line num="6" count="0" type="stmt"/>
+          <line num="7" count="0" type="stmt"/>
+          <line num="8" count="0" type="stmt"/>
+          <line num="10" count="0" type="stmt"/>
+          <line num="16" count="0" type="stmt"/>
+        </file>
+      </package>
+      <package name="src.actions">
+        <metrics statements="11" coveredstatements="5" conditionals="0" coveredconditionals="0" methods="5" coveredmethods="0"/>
+        <file name="index.js" path="/Users/lukehoysted/Sites/LoanApplicationRedux/src/actions/index.js">
+          <metrics statements="11" coveredstatements="5" conditionals="0" coveredconditionals="0" methods="5" coveredmethods="0"/>
+          <line num="1" count="1" type="stmt"/>
+          <line num="3" count="1" type="stmt"/>
+          <line num="5" count="1" type="stmt"/>
+          <line num="6" count="1" type="stmt"/>
+          <line num="7" count="1" type="stmt"/>
+          <line num="10" count="0" type="stmt"/>
+          <line num="23" count="0" type="stmt"/>
+          <line num="24" count="0" type="stmt"/>
+          <line num="31" count="0" type="stmt"/>
+          <line num="39" count="0" type="stmt"/>
+          <line num="47" count="0" type="stmt"/>
+        </file>
+      </package>
+      <package name="src.components.clientfilter">
+        <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <file name="clientfilter.js" path="/Users/lukehoysted/Sites/LoanApplicationRedux/src/components/clientfilter/clientfilter.js">
+          <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+          <line num="6" count="1" type="stmt"/>
+        </file>
+      </package>
+      <package name="src.components.indexview">
+        <metrics statements="40" coveredstatements="2" conditionals="26" coveredconditionals="0" methods="18" coveredmethods="0"/>
+        <file name="indexview.js" path="/Users/lukehoysted/Sites/LoanApplicationRedux/src/components/indexview/indexview.js">
+          <metrics statements="40" coveredstatements="2" conditionals="26" coveredconditionals="0" methods="18" coveredmethods="0"/>
+          <line num="26" count="0" type="cond" truecount="0" falsecount="2"/>
+          <line num="27" count="0" type="stmt"/>
+          <line num="28" count="0" type="stmt"/>
+          <line num="29" count="0" type="stmt"/>
+          <line num="31" count="0" type="cond" truecount="0" falsecount="2"/>
+          <line num="32" count="0" type="stmt"/>
+          <line num="37" count="0" type="cond" truecount="0" falsecount="2"/>
+          <line num="38" count="0" type="stmt"/>
+          <line num="39" count="0" type="stmt"/>
+          <line num="40" count="0" type="stmt"/>
+          <line num="42" count="0" type="cond" truecount="0" falsecount="2"/>
+          <line num="43" count="0" type="stmt"/>
+          <line num="48" count="0" type="stmt"/>
+          <line num="52" count="0" type="stmt"/>
+          <line num="54" count="0" type="cond" truecount="0" falsecount="2"/>
+          <line num="55" count="0" type="stmt"/>
+          <line num="56" count="0" type="stmt"/>
+          <line num="59" count="0" type="cond" truecount="0" falsecount="2"/>
+          <line num="60" count="0" type="stmt"/>
+          <line num="61" count="0" type="stmt"/>
+          <line num="64" count="0" type="cond" truecount="0" falsecount="2"/>
+          <line num="65" count="0" type="stmt"/>
+          <line num="66" count="0" type="stmt"/>
+          <line num="71" count="0" type="stmt"/>
+          <line num="76" count="0" type="cond" truecount="0" falsecount="4"/>
+          <line num="77" count="0" type="stmt"/>
+          <line num="79" count="0" type="stmt"/>
+          <line num="82" count="0" type="stmt"/>
+          <line num="88" count="0" type="stmt"/>
+          <line num="90" count="0" type="stmt"/>
+          <line num="102" count="0" type="cond" truecount="0" falsecount="2"/>
+          <line num="103" count="0" type="stmt"/>
+          <line num="104" count="0" type="stmt"/>
+          <line num="117" count="0" type="stmt"/>
+          <line num="151" count="1" type="stmt"/>
+          <line num="155" count="1" type="stmt"/>
+          <line num="156" count="0" type="stmt"/>
+          <line num="157" count="0" type="stmt"/>
+          <line num="158" count="0" type="stmt"/>
+          <line num="159" count="0" type="stmt"/>
+        </file>
+      </package>
+      <package name="src.components.layout">
+        <metrics statements="6" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
+        <file name="layout.js" path="/Users/lukehoysted/Sites/LoanApplicationRedux/src/components/layout/layout.js">
+          <metrics statements="6" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
+          <line num="1" count="0" type="stmt"/>
+          <line num="2" count="0" type="stmt"/>
+          <line num="3" count="0" type="stmt"/>
+          <line num="5" count="0" type="stmt"/>
+          <line num="6" count="0" type="stmt"/>
+          <line num="10" count="0" type="stmt"/>
+        </file>
+      </package>
+      <package name="src.components.newloanapplication">
+        <metrics statements="16" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="6" coveredmethods="0"/>
+        <file name="newloanapplication.js" path="/Users/lukehoysted/Sites/LoanApplicationRedux/src/components/newloanapplication/newloanapplication.js">
+          <metrics statements="16" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="6" coveredmethods="0"/>
+          <line num="1" count="0" type="stmt"/>
+          <line num="2" count="0" type="stmt"/>
+          <line num="4" count="0" type="stmt"/>
+          <line num="6" count="0" type="stmt"/>
+          <line num="18" count="0" type="stmt"/>
+          <line num="19" count="0" type="stmt"/>
+          <line num="20" count="0" type="stmt"/>
+          <line num="22" count="0" type="stmt"/>
+          <line num="23" count="0" type="stmt"/>
+          <line num="24" count="0" type="stmt"/>
+          <line num="28" count="0" type="stmt"/>
+          <line num="30" count="0" type="stmt"/>
+          <line num="35" count="0" type="stmt"/>
+          <line num="39" count="0" type="stmt"/>
+          <line num="57" count="0" type="stmt"/>
+          <line num="58" count="0" type="stmt"/>
+        </file>
+      </package>
+      <package name="src.components.searchbox">
+        <metrics statements="2" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
+        <file name="searchbox.js" path="/Users/lukehoysted/Sites/LoanApplicationRedux/src/components/searchbox/searchbox.js">
+          <metrics statements="2" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
+          <line num="4" count="1" type="stmt"/>
+          <line num="5" count="0" type="stmt"/>
+        </file>
+      </package>
+      <package name="src.components.spinner">
+        <metrics statements="2" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
+        <file name="spinner.js" path="/Users/lukehoysted/Sites/LoanApplicationRedux/src/components/spinner/spinner.js">
+          <metrics statements="2" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
+          <line num="4" count="1" type="stmt"/>
+          <line num="5" count="0" type="stmt"/>
+        </file>
+      </package>
+      <package name="src.reducers">
+        <metrics statements="21" coveredstatements="0" conditionals="7" coveredconditionals="0" methods="8" coveredmethods="0"/>
+        <file name="index.js" path="/Users/lukehoysted/Sites/LoanApplicationRedux/src/reducers/index.js">
+          <metrics statements="21" coveredstatements="0" conditionals="7" coveredconditionals="0" methods="8" coveredmethods="0"/>
+          <line num="2" count="0" type="stmt"/>
+          <line num="4" count="0" type="stmt"/>
+          <line num="12" count="0" type="stmt"/>
+          <line num="65" count="0" type="stmt"/>
+          <line num="67" count="0" type="stmt"/>
+          <line num="72" count="0" type="stmt"/>
+          <line num="74" count="0" type="stmt"/>
+          <line num="78" count="0" type="stmt"/>
+          <line num="81" count="0" type="stmt"/>
+          <line num="83" count="0" type="stmt"/>
+          <line num="85" count="0" type="stmt"/>
+          <line num="88" count="0" type="stmt"/>
+          <line num="89" count="0" type="stmt"/>
+          <line num="90" count="0" type="stmt"/>
+          <line num="92" count="0" type="stmt"/>
+          <line num="95" count="0" type="stmt"/>
+          <line num="96" count="0" type="stmt"/>
+          <line num="97" count="0" type="stmt"/>
+          <line num="99" count="0" type="stmt"/>
+          <line num="102" count="0" type="stmt"/>
+          <line num="106" count="0" type="stmt"/>
+        </file>
+      </package>
+    </metrics>
+  </project>
+</coverage>

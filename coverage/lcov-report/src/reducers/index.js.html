@@ -1,0 +1,392 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for src/reducers/index.js</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../prettify.css" />
+    <link rel="stylesheet" href="../../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../../index.html">All files</a> / <a href="index.html">src/reducers</a> index.js
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>0/24</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>0/7</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>0/8</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>0/21</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line low'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">// REDUCER IS WHERE WE CHANGE THE STATE
+<span class="cstat-no" title="statement not covered" >import { combineReducers } from 'redux';</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >import { </span>
+    ADD_NEW_APPLICATION, 
+    DELETE_APPLICATION,
+    APPROVE_APPLICATION,
+    DENY_APPLICATION,
+    PENDING_APPLICATION
+ } from './../actions/index';
+&nbsp;
+let initialState = <span class="cstat-no" title="statement not covered" >{</span>
+    version: 1.0,
+    applications: [{
+        appId: 192,
+        client: 'Nationwide',
+        status: 'Approved',
+        amount: 500
+    },
+    {
+        appId: 193,
+        client: 'Citi Bank PLC',
+        status: 'Pending',
+        amount: 18000
+    },
+    {
+        appId: 194,
+        client: 'Natwest PLC',
+        status: 'Approved',
+        amount: 27500
+    },
+    {
+        appId: 195,
+        client: 'Deutsche Bank',
+        status: 'Pending',
+        amount: 27500
+    },
+    {
+        appId: 196,
+        client: 'Halifax',
+        status: 'Approved',
+        amount: 3670
+    },
+    {
+        appId: 197,
+        client: 'Deutsche Bank',
+        status: 'Pending',
+        amount: 13000
+    },
+    {
+        appId: 198,
+        client: 'JP Morgan',
+        status: 'Approved',
+        amount: 5631
+    },
+    {
+        appId: 199,
+        client: 'RBS',
+        status: 'Denied',
+        amount: 187000
+    }]
+};
+&nbsp;
+function <span class="fstat-no" title="function not covered" >rootReducer(state = <span class="branch-0 cbranch-no" title="branch not covered" >initialState, action) {</span></span>
+<span class="cstat-no" title="statement not covered" >    switch(action.type) {</span>
+        case ADD_NEW_APPLICATION:
+<span class="cstat-no" title="statement not covered" >            return {</span>
+                ...state,
+                applications: state.applications.concat(action.payload)
+            }
+        case DELETE_APPLICATION:
+<span class="cstat-no" title="statement not covered" >            return {</span>
+                ...state,
+                applications: state.applications.filter((<span class="fstat-no" title="function not covered" >item) =&gt; <span class="cstat-no" title="statement not covered" >item.appId !== action.payload)</span></span>
+            }
+        case APPROVE_APPLICATION:
+            // find the item in question
+            let loanInQuestion = <span class="cstat-no" title="statement not covered" >state.applications.filter((<span class="fstat-no" title="function not covered" >item) =&gt; <span class="cstat-no" title="statement not covered" >item.appId === action.payload)</span></span></span>
+            
+            // amend the property i want
+<span class="cstat-no" title="statement not covered" >            loanInQuestion[0].status = action.newStatus;</span>
+            // remove item in q then concat new item in
+<span class="cstat-no" title="statement not covered" >            return {</span>
+                ...state,
+                applications: state.applications.filter((<span class="fstat-no" title="function not covered" >item) =&gt; <span class="cstat-no" title="statement not covered" >item.appId !== action.payload).concat(loanInQuestion[0])</span></span>
+            }
+        case DENY_APPLICATION:
+<span class="cstat-no" title="statement not covered" >            loanInQuestion = state.applications.filter((<span class="fstat-no" title="function not covered" >item) =&gt; <span class="cstat-no" title="statement not covered" >item.appId === action.payload)</span></span></span>
+<span class="cstat-no" title="statement not covered" >            loanInQuestion[0].status = action.newStatus;</span>
+<span class="cstat-no" title="statement not covered" >            return {</span>
+                ...state,
+                applications: state.applications.filter((<span class="fstat-no" title="function not covered" >item) =&gt; <span class="cstat-no" title="statement not covered" >item.appId !== action.payload).concat(loanInQuestion[0])</span></span>
+            }
+        case PENDING_APPLICATION:
+<span class="cstat-no" title="statement not covered" >            loanInQuestion = state.applications.filter((<span class="fstat-no" title="function not covered" >item) =&gt; <span class="cstat-no" title="statement not covered" >item.appId === action.payload)</span></span></span>
+<span class="cstat-no" title="statement not covered" >            loanInQuestion[0].status = action.newStatus;</span>
+<span class="cstat-no" title="statement not covered" >            return {</span>
+                ...state,
+                applications: state.applications.filter((<span class="fstat-no" title="function not covered" >item) =&gt; <span class="cstat-no" title="statement not covered" >item.appId !== action.payload).concat(loanInQuestion[0])</span></span>
+            }
+        default:
+<span class="cstat-no" title="statement not covered" >            return state;</span>
+    }
+}
+&nbsp;
+const reducer = <span class="cstat-no" title="statement not covered" >combineReducers({</span>
+    store: rootReducer
+});
+&nbsp;
+export default reducer;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Fri Dec 28 2018 15:19:39 GMT+0000 (Greenwich Mean Time)
+</div>
+</div>
+<script src="../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../sorter.js"></script>
+</body>
+</html>

@@ -15,7 +15,7 @@ import {
     pendingApplication
  } from './../../actions/index';
 
-class IndexView extends Component {
+export class IndexView extends Component {
     state = {
         filteredList: null,
         filterApplied: false
@@ -120,8 +120,9 @@ class IndexView extends Component {
                     <SearchBox />
                     <ClientFilter filterApplied={this.state.filterApplied} filterByClient={this.filterByClientHandler} filterByStatus={this.filterByStatusHandler}/>
                 </div>
-
-                {this.props.storeApplications == null ? loansToShow : null }
+                
+                {/* same as below no? */}
+                {/* {this.props.storeApplications == null ? loansToShow : null } */}
 
                 <div className="loans-container">
                     {this.props.storeApplications !== null ?
