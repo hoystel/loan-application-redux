@@ -13,49 +13,49 @@ let initialState = {
     version: 1.0,
     applications: [{
         appId: 192,
-        client: 'Nationwide',
+        client: 'BMW',
         status: 'Approved',
         amount: 500
     },
     {
         appId: 193,
-        client: 'Citi Bank PLC',
+        client: 'Mercedes',
         status: 'Pending',
         amount: 18000
     },
     {
         appId: 194,
-        client: 'Natwest PLC',
+        client: 'BMW',
         status: 'Approved',
         amount: 27500
     },
     {
         appId: 195,
-        client: 'Deutsche Bank',
+        client: 'Mini',
         status: 'Pending',
         amount: 27500
     },
     {
         appId: 196,
-        client: 'Halifax',
+        client: 'Lexus',
         status: 'Approved',
         amount: 3670
     },
     {
         appId: 197,
-        client: 'Deutsche Bank',
+        client: 'Jaguar',
         status: 'Pending',
         amount: 13000
     },
     {
         appId: 198,
-        client: 'JP Morgan',
+        client: 'BMW',
         status: 'Approved',
         amount: 5631
     },
     {
         appId: 199,
-        client: 'RBS',
+        client: 'BMW',
         status: 'Denied',
         amount: 187000
     }]

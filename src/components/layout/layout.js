@@ -11,7 +11,7 @@ class App extends Component {
       <div className="App">
         <Router>
           <div className="main-container">
-            <h3>Deutsche Bank Applications for credit</h3>
+            <h3>Applications for credit test</h3>
             <Switch>
               <Route path="/" exact component={IndexView} />
               <Route path="/new-loan-application" component={NewLoanApplication} />
