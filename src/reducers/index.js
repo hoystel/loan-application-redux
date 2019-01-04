@@ -4,9 +4,7 @@ import { combineReducers } from 'redux';
 import { 
     ADD_NEW_APPLICATION, 
     DELETE_APPLICATION,
-    APPROVE_APPLICATION,
-    DENY_APPLICATION,
-    PENDING_APPLICATION
+    AMEND_APPLICATION_STATUS,
  } from './../actions/index';
 
 let initialState = {
@@ -73,27 +71,13 @@ function rootReducer(state = initialState, action) {
                 ...state,
                 applications: state.applications.filter((item) => item.appId !== action.payload)
             }
-        case APPROVE_APPLICATION:
+        case AMEND_APPLICATION_STATUS:
             // find the item in question
             let loanInQuestion = state.applications.filter((item) => item.appId === action.payload)
             
             // amend the property i want
             loanInQuestion[0].status = action.newStatus;
             // remove item in q then concat new item in
-            return {
-                ...state,
-                applications: state.applications.filter((item) => item.appId !== action.payload).concat(loanInQuestion[0])
-            }
-        case DENY_APPLICATION:
-            loanInQuestion = state.applications.filter((item) => item.appId === action.payload)
-            loanInQuestion[0].status = action.newStatus;
-            return {
-                ...state,
-                applications: state.applications.filter((item) => item.appId !== action.payload).concat(loanInQuestion[0])
-            }
-        case PENDING_APPLICATION:
-            loanInQuestion = state.applications.filter((item) => item.appId === action.payload)
-            loanInQuestion[0].status = action.newStatus;
             return {
                 ...state,
                 applications: state.applications.filter((item) => item.appId !== action.payload).concat(loanInQuestion[0])

@@ -10,9 +10,7 @@ import Spinner from './../spinner/spinner';
 //import actions - the func
 import { 
     deleteApplication,
-    approveApplication,
-    denyApplication,
-    pendingApplication
+    amendApplicationStatus,
  } from './../../actions/index';
 
 export class IndexView extends Component {
@@ -49,29 +47,15 @@ export class IndexView extends Component {
     }
 
     amendApplicationStatus = (event, appId) => {
-        const eventDesc = event.target.value;
-        
-        if(eventDesc === 'Approved') {
-            const status = 'Approved';
-            this.props.approveApplication(appId, status);
-        }
-
-        if(eventDesc === 'Denied') {
-            const status = 'Denied';
-            this.props.denyApplication(appId, status);
-        }
-
-        if(eventDesc === 'Pending') {
-            const status = 'Pending';
-            this.props.denyApplication(appId, status);
+        const eventStatus = event.target.value;
+        if(eventStatus) {
+            this.props.amendApplication(appId, eventStatus);
         }
     }
 
     render() {
         let loansToShow = <Spinner />;
         let filteredLoansToShow;
-
-        //console.log(this.props.storeApplications);
         
         if(this.props.storeApplications !== null && this.state.filteredList == null) {
             loansToShow = this.props.storeApplications.sort(
@@ -154,9 +138,7 @@ const mapStateToProps = (state) => ({
 
 const mapDispatchToProps = (dispatch) => ({
     removeApplication: (appId) => dispatch(deleteApplication(appId)),
-    approveApplication: (appId, status) => dispatch(approveApplication(appId, status)),
-    denyApplication: (appId, status) => dispatch(denyApplication(appId, status)),
-    pendingApplication: (appId, status) => dispatch(pendingApplication(appId, status))
+    amendApplication: (appId, status) => dispatch(amendApplicationStatus(appId, status))
 });
 
 export default connect(mapStateToProps,mapDispatchToProps)(IndexView);
